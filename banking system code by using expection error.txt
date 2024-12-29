@@ -1,0 +1,76 @@
+#include"iostream"
+#include"conio.h"
+using namespace std;
+class Banking
+{
+
+public:
+    int bal=1000,wa,da,x;
+    void Account()
+    {
+        cout<<"Press 1 to Deposite "<<endl;
+        cout<<"Press 2 to Withdraw "<<endl;
+        cout<<"Press 3 to checkbalance "<<endl;
+        cout<<"Press 4 to exit "<<endl;
+        cout<<"Enter your chioce  :";
+        cin>>x;
+        if(x==1)
+        {
+            cout<<"Enter amount to be Deposite ";
+            cin>>da;
+            bal=bal+da;
+            cout<<"Amount Deposite in your account !!!";
+
+        }
+        else if(x==2)
+        {
+            try{
+                cout<<"Enter Amount to be  widthdraw :";
+                cin>>wa;
+                if(wa>bal)
+                {
+                    throw(4);
+
+                }
+                else
+                {
+                    bal=bal-wa;
+                    cout<<"Amount widthdrawl complete :";
+
+                }
+            }catch(int a)
+            {
+                cout<<"Insufficient Balance!!!!"<<endl;
+                cout<<"Current Balance is :"<<bal<<endl;
+
+            }
+        }
+        else if(x==3)
+        {
+            cout<<"Current Balance of your Account is :"<<bal<<endl;
+
+        }
+        else if(x==4)
+        {
+            cout<<"Thank you for using this application :"<<endl;
+            exit(1);
+
+        }
+        else
+        {
+            cout<<"Invalid input by the user ...."<<endl;
+
+        }
+        Account();
+            }
+            Banking()
+            {
+                cout<<"Account has been open!!!!!"<<endl;
+                Account();
+            }
+};
+int main()
+
+{
+Banking b1;
+}
