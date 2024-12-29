@@ -1,0 +1,44 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    char pn[20],cname[20];
+    float pq,pa,gst,ta,pr,pg,pt;
+    ofstream out;
+    out.open(cname);
+   cout<<"enter costumer name :";
+   cin>>cname;
+    cout<<"enter the name :"<<endl;
+    cin>>pn;
+    cout<<"enter the amount : "<<endl;
+    cin>>pr;
+    cout<<"enter the quantity : "<<endl;
+    cin>>pq;
+    cout<<"enter the percent of GST you have to add : "<<endl;
+    cin>>pg;
+
+
+    pa=pq*pr;
+    pt=pg/100;
+    gst=pa*pt;
+    ta=pa+gst;
+
+    out<<"------------------------------"<<endl;
+    out<<"  HELLO THIS IS YOUR BILL     "<<endl;
+    out<<"------------------------------"<<endl;
+    out<<"\n";
+    out<<"Product name : "<<pn<<endl;
+    out<<"Product rate : "<<pr<<endl;
+    out<<"Product quantity : "<<pq<<endl;
+    out<<"product amount : "<<pa<<endl;
+    out<<"gst added  : "<<pt<<"%"<<endl;
+    out<<"tax amount : "<<gst<<endl;
+    out<<"Your total amount : "<<ta<<endl;
+    out<<"------------------------------"<<endl;
+    out<<"   THANK YOU VISIT AGAIN      "<<endl;
+    out<<"------------------------------"<<endl;
+    out.close();
+
+
+}
